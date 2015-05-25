@@ -54,6 +54,12 @@ app.controller("MapController", function($scope, GbifService, $q, leafletData) {
                         opacity: 0,
                         color: color
                     });
+            	},
+            	onEachFeature: function(feature, layer) {
+					layer.bindPopup(
+						"<h4>scientific name</h4>" + feature.properties.scientificName + 
+						"<h4>year</h4>" + feature.properties.year
+					);
             	}
             };
         });

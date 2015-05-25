@@ -16,6 +16,10 @@ app.service('GbifService', function($q, $http){
                         "coordinates": [o.decimalLongitude, o.decimalLatitude]
                     },
                     "properties": {
+                        year: o.year,
+                        scientificName: o.scientificName,
+                        locality: o.locality,
+                        references: o.references
                     }
                 }
                 geojson['features'].push(newFeature);
