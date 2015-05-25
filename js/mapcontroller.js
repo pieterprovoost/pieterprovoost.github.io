@@ -1,6 +1,6 @@
 app.controller("MapController", function($scope, GbifService, $q, leafletData) {
 
-	$scope.species = "Carcharodon carcharias";
+	//$scope.species = "Carcharodon carcharias";
 
 	$scope.defaults = {
 		attributionControl: false,
@@ -37,15 +37,19 @@ app.controller("MapController", function($scope, GbifService, $q, leafletData) {
 
 	$scope.geojson = {};
 
-	$scope.fetch = function() {
+	$scope.fetch = function(species) {
 
-		var promise = GbifService.occurrences($scope.species);
+		if (!species) {
+			var species = $scope.species;
+		}
+
+		var promise = GbifService.occurrences(species);
 
         $scope.loading = true;
 
         $q.all([promise]).then(function(res) {
         	var color = randomColor({luminosity: 'dark'});
-            $scope.geojson[$scope.species] = {
+            $scope.geojson[species] = {
                 data: res[0],
                 pointToLayer: function(feature, latlng) {
                     return new L.CircleMarker(latlng, {
@@ -71,6 +75,9 @@ app.controller("MapController", function($scope, GbifService, $q, leafletData) {
 		$scope.species = "";
 	};
 
-	$scope.fetch();
+	$scope.fetch('Hydroprogne caspia');
+	$scope.fetch('Sterna forsteri');
+	$scope.fetch('Thalasseus sandvicensis');
+	$scope.fetch('Sterna acuticauda');
 
 });
