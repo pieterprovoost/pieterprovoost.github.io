@@ -4,15 +4,9 @@ html, body {
 }
 
 leaflet {
+	margin-left: 400px;
 	display: block;
 	min-height: 100%;
-}
-
-#search {
-    z-index: 1000;
-    position: absolute;
-    top: 20px;
-    left: 20px;
 }
 
 .leaflet-control-zoom {
@@ -25,11 +19,21 @@ leaflet {
 
 #log {
 	margin-top: 10px;
-	height: 200px;
+	height: 100px;
 	width: 100%;
 	resize: none;
 }
 
-#search {
+#wrapper {
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	top: 0px;
+	background-color: "#ffffff";
 	width: 400px;
+	padding: 10px;
+}
+
+.point {
+	cursor: pointer;
 }

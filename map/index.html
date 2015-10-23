@@ -12,18 +12,57 @@
 
 <leaflet id="map" map="map"></leaflet>
 
-<div id="search" class="container">
-	<div class="input-group col-md-12">
-		<input class="form-control" id="searchfield" ng-enter="plot()" ng-model="coord" placeholder="Enter coordinates">
-		<span class="input-group-btn">
-			<button type="button" id="plotbutton" class="btn btn-default" ng-click="plot()">Add</button>
-			<button type="button" id="clearbutton" class="btn btn-default" ng-click="clear()">Clear</button>
+<div id="wrapper" class="container">
 
-		</span>
-	</div>
-	<div class="col-md-12 input-group">
-		<textarea class="form-control" id="log" ng-model="log"></textarea>
-	</div>
+		<div class="col-md-12">
+			<h4>Coordinates</h4>
+			<div class="input-group">
+				<input class="form-control" id="searchfield" ng-enter="plot()" ng-model="coord" placeholder="Enter coordinates">
+				<span class="input-group-btn">
+					<button type="button" id="plotbutton" class="btn btn-default" ng-click="plot()">Add</button>
+					<button type="button" id="clearbutton" class="btn btn-default" ng-click="clear()">Clear</button>
+				</span>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+			<textarea class="form-control" id="log" ng-model="log"></textarea>
+		</div>
+
+		<div class="col-md-12">
+			<h4>Geocoding</h4>
+			<div class="input-group">
+				<input class="form-control" id="coding" ng-enter="geocode()" ng-model="input" placeholder="Enter location name">
+				<span class="input-group-btn">
+					<button type="button" id="codebutton" class="btn btn-default" ng-click="geocode()">Submit</button>
+				</span>
+			</div>
+
+			<p>
+			<table class="table table-condensed">
+				<thead>
+		            <tr>
+		                <th>Type</th>
+		                <th>Name</th>
+		                <th>Lon</th>
+		                <th>Lat</th>
+		            </tr>
+	            </thead>
+	            <tbody>
+	            <tr class="point" ng-repeat="g in gazetteer" ng-click="add(g.longitude, g.latitude)">
+	                <td>{{g.placeType}}</td>
+	                <td>{{g.preferredGazetteerName}}</td>
+	                <td>{{g.longitude | number : 4}}</td>
+	                <td>{{g.latitude | number : 4}}</td>
+	            </tr>
+	            <tr ng-if="!(gazetteer.length > 0) && !loading"><td>No results</td></tr>
+	            <tr ng-if="loading"><td>Loading...</td></tr>
+	            </tbody>
+            </table>
+            </p>
+
+		</div>
+
 </div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
