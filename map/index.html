@@ -1,0 +1,36 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+
+<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="style.css" />
+
+</head>
+<body ng-controller="mapcontroller">
+
+<leaflet id="map" map="map"></leaflet>
+
+<div id="search" class="container">
+	<div class="input-group col-md-12">
+		<input class="form-control" id="searchfield" ng-enter="plot()" ng-model="coord" placeholder="Enter coordinates">
+		<span class="input-group-btn">
+			<button type="button" id="plotbutton" class="btn btn-default" ng-click="plot()">Add</button>
+			<button type="button" id="clearbutton" class="btn btn-default" ng-click="clear()">Clear</button>
+
+		</span>
+	</div>
+	<div class="col-md-12 input-group">
+		<textarea class="form-control" id="log" ng-model="log"></textarea>
+	</div>
+</div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/leaflet/dist/leaflet.js"></script>
+<script src="bower_components/leafcutter/leafcutter.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
