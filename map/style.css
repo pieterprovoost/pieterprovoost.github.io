@@ -13,6 +13,18 @@ leaflet {
 	visibility: hidden;
 }
 
+[ng\:cloak], [ng-cloak], .ng-cloak {
+	display: none !important;
+}
+
+.loading {
+	font-style: italic;
+}
+
+.input-group {
+	margin-bottom: 15px;
+}
+
 .leaflet-container { 
 	cursor: crosshair;
 }

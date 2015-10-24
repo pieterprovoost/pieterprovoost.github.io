@@ -43,9 +43,8 @@ app.directive('ngEnter', function() {
 
 app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocodeservice) {
 
-	$scope.log = "";
-	$scope.layer = L.layerGroup();
 	$scope.loading = false;
+	$scope.locations = [];
 
 	$scope.geocode = function() {
 		$scope.gazetteer = {};
@@ -57,7 +56,12 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 		});
 	};
 
-	$scope.add = function(lon, lat) {
+	$scope.add = function(lon, lat, name) {
+
+		lon = $filter('number')(lon, 4);
+		lat = $filter('number')(lat, 4);
+
+		/*
 		var dlon = trunc(lon);
 		var tlon = (lon - dlon) * 60;
 		var mlon = trunc(tlon);
@@ -76,8 +80,23 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 		}
 		var llon = plon + " " + Math.abs(dlon) + "°" + "" + Math.abs(mlon) + "'" + "" + Math.abs(slon) + "\"";
 		var llat = plat + " " + Math.abs(dlat) + "°" + "" + Math.abs(mlat) + "'" + "" + Math.abs(slat) + "\"";
-		$scope.log = $scope.log + $filter('number')(lon, 4) + " " + $filter('number')(lat, 4) + " (" + llon + " " + llat + ")\n";
-		var marker = L.marker([lat, lon]).addTo($scope.layer);
+		var description = $filter('number')(lon, 4) + " " + $filter('number')(lat, 4) + " (" + llon + " " + llat + ")\n";
+		*/
+
+		var marker = L.marker([lat, lon]);
+
+		leafcuttermaps.getMap("map").then(function(map) {
+			marker.addTo(map.map);
+		});
+
+		var entry = {lon: lon, lat: lat, marker: marker};
+
+		if (name !== undefined) {
+			entry.name = name;
+		}
+
+		$scope.locations.push(entry);
+
 	};
 
 	$scope.plot = function() {
@@ -85,21 +104,29 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 		if (coords.length == 2) {
 			var lon = coords[0];
 			var lat = coords[1];
-			add(lon, lat);
+			$scope.add(lon, lat);
 		}
 	};
 
-	$scope.clear = function() {
-		$scope.log = "";
-		$scope.coord = "";
-		$scope.layer.clearLayers();
+	$scope.del = function(location) {
+		leafcuttermaps.getMap("map").then(function(map) {
+			map.map.removeLayer(location.marker);
+		});
+		var i = $scope.locations.indexOf(location);
+		if (i != -1) {
+			$scope.locations.splice(i, 1);
+		}
+	};
+
+	$scope.clearcode = function() {
+		$scope.input = "";
+		$scope.gazetteer = [];
 	};
 
 	leafcuttermaps.getMap("map").then(function(map) {
-		$scope.layer.addTo(map.map);
 		map.map.on('click', function(e) {
 			$scope.$apply(function() {
-				$scope.coord = $filter('number')(e.latlng.lng, 4) + " " + $filter('number')(e.latlng.lat, 4);
+				$scope.add($filter('number')(e.latlng.lng, 4), $filter('number')(e.latlng.lat, 4));
 			});
 		});
 	});
