@@ -46,6 +46,7 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 	$scope.loading = false;
 	$scope.locations = [];
 	$scope.eez = null;
+	$scope.iho = null;
 
 	$scope.geocode = function() {
 		$scope.gazetteer = {};
@@ -60,7 +61,6 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 	$scope.showeez = false;
 
 	$scope.toggleeez = function() {
-
 		leafcuttermaps.getMap("map").then(function(map) {
 			if ($scope.eez == null) {
 				$scope.eez = L.tileLayer.wms("http://iobis.org/geoserver/OBIS/wms?service=WMS&version=1.1.0&request=GetMap&layers=OBIS:eezs&styles=&srs=EPSG:4326", {
@@ -74,7 +74,22 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 				$scope.eez = null;
 			}
 		});
+	};
 
+	$scope.toggleiho = function() {
+		leafcuttermaps.getMap("map").then(function(map) {
+			if ($scope.iho == null) {
+				$scope.iho = L.tileLayer.wms("http://iobis.org/geoserver/OBIS/wms?service=WMS&version=1.1.0&request=GetMap&layers=OBIS:eezs&styles=&srs=EPSG:4326", {
+					layers: 'OBIS:iho',
+					format: 'image/png',
+					transparent: true
+				});
+				$scope.iho.addTo(map.map);
+			} else {
+				map.map.removeLayer($scope.iho);
+				$scope.iho = null;
+			}
+		});
 	};
 
 	$scope.add = function(lon, lat, name) {
