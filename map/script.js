@@ -45,6 +45,7 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 
 	$scope.loading = false;
 	$scope.locations = [];
+	$scope.eez = null;
 
 	$scope.geocode = function() {
 		$scope.gazetteer = {};
@@ -54,6 +55,26 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 			$scope.loading = false;
 			$scope.input = "";
 		});
+	};
+
+	$scope.showeez = false;
+
+	$scope.toggleeez = function() {
+
+		leafcuttermaps.getMap("map").then(function(map) {
+			if ($scope.eez == null) {
+				$scope.eez = L.tileLayer.wms("http://iobis.org/geoserver/OBIS/wms?service=WMS&version=1.1.0&request=GetMap&layers=OBIS:eezs&styles=&srs=EPSG:4326", {
+					layers: 'OBIS:eezs',
+					format: 'image/png',
+					transparent: true
+				});
+				$scope.eez.addTo(map.map);
+			} else {
+				map.map.removeLayer($scope.eez);
+				$scope.eez = null;
+			}
+		});
+
 	};
 
 	$scope.add = function(lon, lat, name) {

@@ -15,6 +15,13 @@
 <div id="wrapper" class="container" ng-cloak>
 
 		<div class="col-md-12">
+			<h4>Layers</h4>
+			<div class="input-group">
+				<button type="button" id="eezbutton" class="btn btn-default" ng-click="toggleeez()">EEZ</button>
+			</div>
+		</div>
+
+		<div class="col-md-12">
 			<h4>Coordinates</h4>
 			<div class="input-group">
 				<input class="form-control" id="searchfield" ng-enter="plot()" ng-model="coord" placeholder="Enter coordinates">
