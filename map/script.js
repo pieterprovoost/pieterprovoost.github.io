@@ -34,7 +34,6 @@ app.directive('ngEnter', function() {
                 scope.$apply(function(){
                         scope.$eval(attrs.ngEnter);
                 });
-                
                 event.preventDefault();
             }
         });
@@ -160,10 +159,17 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 	};
 
 	leafcuttermaps.getMap("map").then(function(map) {
+		map.clicked = 0;
 		map.map.on('click', function(e) {
-			$scope.$apply(function() {
-				$scope.add($filter('number')(e.latlng.lng, 4), $filter('number')(e.latlng.lat, 4));
-			});
+			map.clicked = map.clicked + 1;
+			setTimeout(function() {
+				if (map.clicked == 1) {
+					$scope.$apply(function() {
+						$scope.add($filter('number')(e.latlng.lng, 4), $filter('number')(e.latlng.lat, 4));
+					});
+				}
+				map.clicked = 0;
+			}, 300);
 		});
 	});
 
