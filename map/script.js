@@ -159,6 +159,7 @@ app.controller("mapcontroller", function($scope, $filter, leafcuttermaps, geocod
 	};
 
 	leafcuttermaps.getMap("map").then(function(map) {
+		map.zoomcontrol.setPosition("topright");
 		map.clicked = 0;
 		map.map.on('click', function(e) {
 			map.clicked = map.clicked + 1;

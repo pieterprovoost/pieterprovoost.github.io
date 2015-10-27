@@ -9,10 +9,6 @@ leaflet {
 	min-height: 100%;
 }
 
-.leaflet-control-zoom {
-	visibility: hidden;
-}
-
 [ng\:cloak], [ng-cloak], .ng-cloak {
 	display: none !important;
 }
