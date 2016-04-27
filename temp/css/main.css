@@ -1,0 +1,86 @@
+body {
+    font-family: 'Helvetica', 'Arial', 'Sans-Serif';    
+    margin: 60px auto;
+    width: 70%;
+}
+
+.fa {
+    font-size: 2em;
+}
+
+nav {
+    display: inline-block;
+    float: right;
+}
+
+#title {
+    display: inline-block;
+    float: left;
+    margin: 0em 0 1em 0;
+
+    font-family: 'IM Fell DW Pica', cursive;
+    font-family: 'Grand Hotel', cursive;
+    font-family: 'Satisfy', cursive;
+    font-family: 'Cabin Sketch', cursive;
+    font-family: 'Amatic SC', cursive;
+    font-family: 'Pacifico', cursive;
+    
+    font-size: 1.2em;
+
+}
+
+nav ul, footer ul {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: normal;
+}
+
+nav ul li, footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #999;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+}
+
+p {
+    font-size: 1em;
+    line-height: 1em;
+    color: #333;
+}
+
+.intro {
+    font-size: 1.5em;
+    line-height: 1.4em
+}
+
+footer {
+    border-top: 1px solid #d5d5d5;
+    font-size: .8em;
+}
+
+ul.posts { 
+    margin: 20px auto 40px; 
+    font-size: 1.2em;
+}
+
+ul.posts li {
+    list-style: none;
+}
+
+.cf { zoom: 1; }
+.cf:before,
+.cf:after { content: ""; display: table; }
+.cf:after { clear: both; }
