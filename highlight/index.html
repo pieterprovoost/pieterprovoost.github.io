@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" href="styles/gruvbox-dark.css">
+<link rel="stylesheet" href="styles/kimbie.dark.css">
+<link rel="stylesheet" href="styles/railscasts.css">
+<link rel="stylesheet" href="styles/androidstudio.css">
+<link rel="stylesheet" href="styles/monokai-sublime.css">
+<link rel="stylesheet" href="styles/tomorrow-night-bright.css">
+<link rel="stylesheet" href="styles/obsidian.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+.container {
+	padding: 20px 0px;
+}
+#output {
+	font-family: Courier;
+	background-color: #333333;
+	padding: 10px;
+	min-height: 50px;
+	border-radius: 5px;
+	margin-top: 20px;
+	color: #ffffff;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<textarea id="source" class="form-control" rows="10">
+</textarea>
+<br/><button class="btn btn-default" onclick="hl()">highlight</button>
+</div>
+<div class="row">
+<div id="output">
+</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="highlight.pack.js"></script>
+<script>
+var hl = function() {
+	var source = $("#source").val();
+	var result = hljs.highlight("r", source);
+	console.log(result.value);
+	var fixed = result.value.replace(/\n/g, "<br/>");
+	fixed = fixed.replace(/\s\s/g, "&nbsp;&nbsp;");
+	console.log(fixed);
+	$("#output").html(fixed);
+};
+</script>
+</body>
+</html>
