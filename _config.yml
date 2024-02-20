@@ -1,0 +1,14 @@
+title: Pieter Provoost
+email: pieterprovoost@gmail.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+plugins:
+  - jekyll-feed
+
+exclude:
+  - README.md
+
+collections:
+  projects:
+    output: false
