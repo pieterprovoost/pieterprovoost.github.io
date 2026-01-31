@@ -14,6 +14,10 @@ h2 {
     margin-top: 1.7em;
 }
 
+h2.bibliography {
+    font-size: 1.2em;
+}
+
 a {
     text-decoration: none;
     color: #FF5733;
@@ -56,4 +60,14 @@ a:hover {
 
 .socials a:hover {
     text-decoration: none !important;
+}
+
+ol {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+ol li {
+    margin-bottom: 1em;
 }

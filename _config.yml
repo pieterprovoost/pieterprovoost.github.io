@@ -5,6 +5,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 plugins:
   - jekyll-feed
+  - jekyll-scholar
 
 exclude:
   - README.md
@@ -12,3 +13,10 @@ exclude:
 collections:
   projects:
     output: false
+
+scholar:
+  sort_by: year
+  order: descending
+  group_by: year
+  group_order: descending
+  bibliography_template: bib
