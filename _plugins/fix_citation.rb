@@ -2,7 +2,7 @@ module Jekyll
   module DOIConverter
     def fix_citation(input)
       result = input.gsub(/(https?:\/\/doi\.org\/[^\s"<]+)/i) do |doi_url|
-        %(<a href="#{doi_url}">#{doi_url}</a>)
+        %(<a target="_blank" href="#{doi_url}">#{doi_url}</a>)
       end
       
       result.gsub(/(Provoost, P\.)/) do |match|
