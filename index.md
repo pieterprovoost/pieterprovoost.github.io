@@ -12,8 +12,10 @@ layout: default
   </div>
 </section>
 
-{% include_relative projects.md %}
-
 {% include experience.md %}
+
+{% include education.md %}
+
+{% include_relative projects.md %}
 
 {% include_relative publications.md %}

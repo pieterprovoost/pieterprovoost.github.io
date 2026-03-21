@@ -166,6 +166,12 @@ a.site-name:any-link {
     padding: 0;
 }
 
+/* Long month+year labels: one line, spill left (column stays narrow; text-align right) */
+.list-section--education .list-row__year {
+    white-space: nowrap;
+    overflow: visible;
+}
+
 .list-section--bibliography > h2.bibliography {
     padding: 0;
     grid-column: 1;
@@ -186,7 +192,24 @@ a.site-name:any-link {
 }
 
 .list-row__title {
-    margin: 0 0 0.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    margin: 0 0 0.35rem;
+}
+
+.list-row__role {
+    font-weight: 600;
+    line-height: 1.35;
+    letter-spacing: -0.015em;
+}
+
+.list-row__workplace {
+    font-size: 0.9em;
+    line-height: 1.45;
+    color: var(--color-text);
+    opacity: 0.72;
 }
 
 .list-row__desc {
@@ -236,6 +259,10 @@ a.site-name:any-link {
     .list-row__year,
     .list-section--bibliography > h2.bibliography {
         text-align: left;
+    }
+
+    .list-section--education .list-row__year {
+        white-space: normal;
     }
 
     .list-section--bibliography {
