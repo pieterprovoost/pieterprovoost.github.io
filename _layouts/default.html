@@ -1,14 +1,18 @@
-<html>
+<html lang="en">
   {% include head.html %}
 
   <body>
+    <header class="site-header">
+      <div class="site-inner">
+        <a class="site-name" href="{{ '/' | relative_url }}">Pieter Provoost</a>
+        <p class="site-tagline">Marine science &amp; biodiversity informatics</p>
+      </div>
+    </header>
 
-    <div class="container mt-4">
-      <h1>Pieter Provoost</h1>
-      
-      {{ content }}
-    
-    </div>
-
+    <main class="site-main">
+      <div class="site-inner">
+        {{ content }}
+      </div>
+    </main>
   </body>
 </html>
