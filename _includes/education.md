@@ -33,7 +33,7 @@
         <div class="list-row__year">June 2006</div>
         <div class="list-row__body">
           <div class="list-row__title">
-            <span class="list-row__role">CARBOOCEAN summer school: Modelling o the marine carbon cycle from small to global scale</span>
+            <span class="list-row__role">CARBOOCEAN summer school: Modelling of the marine carbon cycle from small to global scale</span>
             <span class="list-row__workplace">Bjerknes Centre for Climate Research, Bergen, Norway</span>
           </div>
         </div>
