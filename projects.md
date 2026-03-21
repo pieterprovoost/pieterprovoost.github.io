@@ -1,4 +1,4 @@
-## Projects
+## Software
 
 <div class="projects">
 {% for project in site.projects %}
