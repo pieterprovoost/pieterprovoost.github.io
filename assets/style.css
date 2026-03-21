@@ -45,9 +45,9 @@ body {
     letter-spacing: -0.02em;
 }
 
-.site-name:hover {
-    opacity: 0.88;
-    text-decoration: underline;
+/* Keep masthead weight; global a:any-link uses 600 */
+a.site-name:any-link {
+    font-weight: 700;
 }
 
 .site-tagline {
@@ -268,15 +268,24 @@ ol.bibliography > li {
     padding: 0;
 }
 
-a {
+/* Override Bootstrap reboot link colors (blue hover) */
+a:any-link {
     text-decoration: none;
     color: var(--color-accent);
     font-weight: 600;
+    /* Same padding + negative margin in both states so hover doesn’t shift text */
+    padding: 0.08em 0.22em;
+    margin: -0.08em -0.22em;
+    background-color: transparent;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
 }
 
-a:hover {
-    opacity: 0.88;
-    text-decoration: underline;
+a:any-link:hover {
+    color: #fff;
+    background-color: var(--color-accent);
+    text-decoration: none;
+    opacity: 1;
 }
 
 .projects {
@@ -311,12 +320,19 @@ a:hover {
     box-shadow: 0 0 52px -2px rgba(0, 0, 0, 0.15);
 }
 
-.socials a {
-    margin-right: 0.8em;
+/* No hover/focus styling — icons stay static */
+.socials a:any-link {
+    padding: 0;
+    margin: 0 0.8em 0 0;
+    background-color: transparent;
     color: var(--color-accent);
+    font-weight: normal;
 }
 
-.socials a:hover {
-    text-decoration: none !important;
-    opacity: 0.88;
+.socials a:any-link:hover,
+.socials a:any-link:focus-visible {
+    color: var(--color-accent);
+    background-color: transparent;
+    opacity: 1;
+    text-decoration: none;
 }
