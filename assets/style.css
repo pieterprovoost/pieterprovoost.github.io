@@ -1,4 +1,8 @@
 /* Base — readable column, list rhythm (POC) */
+html {
+    overflow-x: hidden;
+}
+
 :root {
     --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     --font-serif: "Source Serif 4", "Georgia", serif;
@@ -26,9 +30,11 @@ body {
 }
 
 .site-inner {
-    max-width: min(54rem, 94vw);
+    /* Use 100% not vw — avoids sub-pixel horizontal scroll when combined with padding/scrollbars */
+    max-width: min(54rem, 100%);
     margin: 0 auto;
     padding: 0 1.25rem;
+    box-sizing: border-box;
 }
 
 .site-header {
@@ -222,6 +228,7 @@ a.site-name:any-link {
     color: var(--color-text);
     padding: var(--timeline-pad-y) 0;
     border-bottom: var(--timeline-border);
+    overflow-wrap: anywhere;
 }
 
 .bib-entry:last-child {
@@ -235,16 +242,27 @@ a.site-name:any-link {
 }
 
 @media (max-width: 640px) {
+    /* Link negative horizontal margins extend past the column and cause sideways scroll */
+    a:any-link {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     .page-section {
         grid-template-columns: 1fr;
         gap: 0.5rem;
         padding-top: 1.5rem;
+        /* Keep border-top between major sections (Experience, Education, …) */
     }
 
     .page-section__label {
         text-align: left;
         padding-bottom: 0.25rem;
-        border-bottom: 1px solid #eee;
+        border-bottom: none;
+    }
+
+    .bib-entry {
+        border-bottom: none;
     }
 
     .page-section__content--indent-body {
@@ -254,6 +272,7 @@ a.site-name:any-link {
     .list-row {
         grid-template-columns: 1fr;
         gap: 0.25rem;
+        border-bottom: none;
     }
 
     .list-row__year,
@@ -277,7 +296,7 @@ a.site-name:any-link {
 
     .list-section--bibliography > h2.bibliography ~ h2.bibliography {
         padding-top: 0.75rem;
-        border-top: 1px solid #eee;
+        border-top: none;
     }
 }
 
