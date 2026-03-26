@@ -9,7 +9,7 @@
             <span class="list-row__role">OBIS data manager</span>
             <span class="list-row__workplace">IOC-UNESCO · Oostende, Belgium</span>
           </div>
-          <p class="list-row__desc">Lead maintenance and development of the OBIS marine biodiversity platform, delivery of the work plan and technical requirements for task and project teams, collaboration with Ocean InfoHub and GOOS, extra-budgetary projects (Flanders, EU) including data flows and visualisation, user support and training for nodes and partners, and technical input to other IOC/IODE programmes (e.g. harmful algae, SDG&nbsp;14.3.1, Ocean InfoHub, OceanExpert).</p>
+          <p class="list-row__desc">At IOC-UNESCO, I lead the development and maintenance of the OBIS marine biodiversity platform, and provide support to the OBIS network as well as to users of OBIS data. Besides my work on the core OBIS infrastructure I also develop software and platforms for data publishing, quality control, and data analysis.</p>
         </div>
       </div>
       <div class="list-row">
@@ -19,7 +19,7 @@
             <span class="list-row__role">Software engineer</span>
             <span class="list-row__workplace">ADMB · Brugge, Belgium</span>
           </div>
-          <p class="list-row__desc">At ADMB (now Liantis), designed and built IT systems for the occupational-health subsidiary: a platform for registering and analysing workplace environmental exposure data and protocols for lab–hospital data exchange, plus a group-wide data warehouse to support analytics and machine learning across the business.</p>
+          <p class="list-row__desc">At ADMB (now Liantis), I designed and built IT systems for the occupational health subsidiary, including a platform for registering, analysing, and synchronising workplace environmental exposure data.</p>
         </div>
       </div>
       <div class="list-row">
@@ -29,7 +29,7 @@
             <span class="list-row__role">Software engineer</span>
             <span class="list-row__workplace">Colruyt Group · Deinze, Belgium</span>
           </div>
-          <p class="list-row__desc">Technical analysis and delivery of logistics projects for order picking and transport across Colruyt, Colruyt France, Bio-Planet, and Dreamland, including scaling e‑commerce home delivery and an automated freezer warehouse with an industrial automation partner.</p>
+          <p class="list-row__desc">At Colruyt Group, I handled technical analysis and delivery of logistics projects for order picking and transport across Colruyt Group brands (Colruyt, Colruyt France, Bio-Planet, and Dreamland). I scaled up e-commerce home delivery and developed an automated freezer warehouse with our industrial automation partner.</p>
         </div>
       </div>
       <div class="list-row">
@@ -41,7 +41,7 @@
             <span class="list-row__workplace">Université Pierre-et-Marie-Curie · Paris, France</span>
             <span class="list-row__workplace">Observatoire Oceanologique de Villefranche · Villefranche-sur-Mer, France</span>
           </div>
-          <p class="list-row__desc">Field and laboratory work on EU projects (Westbanks, BOOM, CARBOOCEAN, MARBEF): sampling, mesocosm experiments, chemical and isotope analyses, and modelling—leading to food-web studies with stable isotopes and fatty-acid markers, software for bioturbation image analysis, and coastal pH time-series work linking eutrophication to long-term trends.</p>
+          <p class="list-row__desc">At NIOO, I carried out field, laboratory, and desktop-based research for international projects and initiatives such as Westbanks, BOOM, CARBOOCEAN, and MARBEF. This included field sampling, mesocosm experiments, chemical analyses, ecological modelling, image analysis, and time-series analysis.</p>
         </div>
       </div>
     </section>
