@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="list-row">
-        <div class="list-row__year">July 2004</div>
+        <div class="list-row__year">July 2005</div>
         <div class="list-row__body">
           <div class="list-row__title">
             <span class="list-row__role">CARBOOCEAN summer school: Measurement methods for the carbon system and related tracers in sea water</span>
