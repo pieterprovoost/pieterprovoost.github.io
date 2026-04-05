@@ -25,7 +25,7 @@
         <div class="list-row__body">
           <div class="list-row__title">
             <span class="list-row__role">Advanced Bachelor of Bioinformatics</span>
-            <span class="list-row__workplace">Howest University of Applied Sciences</span>
+            <span class="list-row__workplace">Howest University of Applied Sciences, Belgium</span>
           </div>
         </div>
       </div>
